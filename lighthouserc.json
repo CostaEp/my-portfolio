@@ -1,0 +1,14 @@
+{
+    "ci": {
+      "collect": {
+        "staticDistDir": "./build",
+        "url": ["http://localhost/index.html"]
+      },
+      "assert": {
+        "preset": "lighthouse:recommended"
+      },
+      "upload": {
+        "target": "temporary-public-storage"
+      }
+    }
+  }
