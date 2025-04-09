@@ -1,4 +1,4 @@
-name: GitHub Pages CI/CD Pipeline
+name: Full DevOps Pipeline 🚀
 
 on:
   push:
@@ -36,12 +36,14 @@ jobs:
       - name: Install dependencies 🛠️
         run: npm install
 
-      - name: Run linter 🔧
+      - name: Run tests ✅
         run: |
-          if [ -f package.json ] && npm run lint; then
-            echo "Lint passed"
+          echo "Running tests... 🧪"
+          if npm test; then
+            echo "✅ Tests passed!"
           else
-            echo "No lint script or lint issues found."
+            echo "❌ Tests failed! Check logs."
+            exit 1
           fi
 
       - name: Build project 📚
@@ -52,7 +54,14 @@ jobs:
           if [ ! -f "build/index.html" ]; then
             echo "❌ Build failed: index.html not found!"
             exit 1
+          else
+            echo "✅ Build successful!"
           fi
+
+      - name: Serve build directory 🌐
+        run: |
+          npm install -g http-server
+          http-server ./build -p 3000 &
 
       - name: Lighthouse audit 🌟
         uses: treosh/lighthouse-ci-action@v11
@@ -69,5 +78,32 @@ jobs:
           force_orphan: true
           commit_message: "🚀 Auto-deploy to GitHub Pages"
 
-      - name: Done 🌟
-        run: echo "Deployment completed successfully!"
+      - name: Done 🎉
+        run: echo "✅ Deployment completed successfully!"
+
+  docker-build-and-push:
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+
+    steps:
+      - name: Checkout repository 📦
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx 🛠️
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to DockerHub 🐳
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push Docker image 🚢
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: costadevop/my-portfolio:latest
+
+      - name: Done 🎉
+        run: echo "✅ Docker image build & push completed successfully!"

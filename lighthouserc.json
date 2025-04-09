@@ -1,8 +1,9 @@
 {
     "ci": {
       "collect": {
-        "url": ["http://localhost:$LHCI_SERVER_PORT/"],
-        "staticDistDir": "./build"
+        "staticDistDir": "./build",
+        "startServerCommand": "npx serve ./build",
+        "startServerReadyPattern": "Accepting connections"
       },
       "assert": {
         "preset": "lighthouse:recommended"
