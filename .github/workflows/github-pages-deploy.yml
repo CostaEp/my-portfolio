@@ -15,35 +15,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository 🛎️
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0 # כדאי ל־gh-pages
 
-      - name: Setup Node.js
+      - name: Setup Node.js 🧩
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Cache node modules 📦
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies 🚀
         run: npm install
 
-      - name: Build project
+      - name: Build project 🏗️
         run: npm run build
 
-      - name: Cleanup existing gh-pages branch
+      - name: Verify build output exists 🔍
         run: |
-          git fetch origin gh-pages || echo "No existing gh-pages branch"
-          git push origin --delete gh-pages || echo "No gh-pages branch to delete"
+          if [ ! -f "build/index.html" ]; then
+            echo "❌ Build failed: index.html not found!"
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          # force clean publish
           force_orphan: true
-          commit_message: "🚀 Deploy to GitHub Pages"
+          commit_message: "🚀 Auto-deploy to GitHub Pages"
 
       - name: Done 🎉
         run: echo "Deployment completed successfully!"
