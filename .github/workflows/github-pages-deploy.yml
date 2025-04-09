@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   build:
@@ -26,6 +26,13 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Verify build output exists
+        run: |
+          if [ ! -f "build/index.html" ]; then
+            echo "❌ Build failed: index.html not found!"
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
