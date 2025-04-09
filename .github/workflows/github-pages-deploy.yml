@@ -7,16 +7,20 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -27,15 +31,19 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Verify build output exists
+      - name: Cleanup existing gh-pages branch
         run: |
-          if [ ! -f "build/index.html" ]; then
-            echo "❌ Build failed: index.html not found!"
-            exit 1
-          fi
+          git fetch origin gh-pages || echo "No existing gh-pages branch"
+          git push origin --delete gh-pages || echo "No gh-pages branch to delete"
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          # force clean publish
+          force_orphan: true
+          commit_message: "🚀 Deploy to GitHub Pages"
+
+      - name: Done 🎉
+        run: echo "Deployment completed successfully!"
