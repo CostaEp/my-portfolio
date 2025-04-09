@@ -63,4 +63,4 @@ Feel free to reach out to me on [GitHub](https://github.com/CostaEp)!
 
 ---
 
-> 🙌 Thanks for visiting my portfolio project!
+> 🙌 Thanks for visiting my portfolio project! 
