@@ -19,7 +19,7 @@ const greeting = {
   subTitle: emoji(
     "A passionate DevOps Engineer 🚀 with hands-on experience in AWS, CI/CD, Kubernetes, Docker, Terraform, and monitoring tools like Prometheus and Grafana. Automating infrastructure and delivering scalable solutions."
   ),
-  resumeLink: "/Resume.pdf",
+  resumeLink: "https://costaep.github.io/my-portfolio/Resume.pdf",
   displayGreeting: true
 };
 
