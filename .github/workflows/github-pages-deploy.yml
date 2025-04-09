@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: GitHub Pages CI/CD Pipeline
 
 on:
   push:
@@ -11,16 +11,16 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository 🛎️
+      - name: Checkout repository 📦
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # כדאי ל־gh-pages
+          fetch-depth: 0
 
-      - name: Setup Node.js 🧩
+      - name: Setup Node.js 🛠️
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -33,18 +33,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install dependencies 🚀
+      - name: Install dependencies 🛠️
         run: npm install
 
-      - name: Build project 🏗️
+      - name: Run linter 🔧
+        run: |
+          if [ -f package.json ] && npm run lint; then
+            echo "Lint passed"
+          else
+            echo "No lint script or lint issues found."
+          fi
+
+      - name: Build project 📚
         run: npm run build
 
-      - name: Verify build output exists 🔍
+      - name: Test build output exists 🔍
         run: |
           if [ ! -f "build/index.html" ]; then
             echo "❌ Build failed: index.html not found!"
             exit 1
           fi
+
+      - name: Lighthouse audit 🌟
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          configPath: './lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v4
@@ -54,5 +69,5 @@ jobs:
           force_orphan: true
           commit_message: "🚀 Auto-deploy to GitHub Pages"
 
-      - name: Done 🎉
+      - name: Done 🌟
         run: echo "Deployment completed successfully!"

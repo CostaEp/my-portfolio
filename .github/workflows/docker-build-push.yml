@@ -1,29 +1,36 @@
-name: Build and Push Docker image
+name: Docker Image Build & Push
 
 on:
   push:
     branches:
-      - main  # תוודא שזה הבראנץ' שלך
+      - main
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository 📦
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
+      - name: Set up Docker Buildx 🛠️
         uses: docker/setup-buildx-action@v3
 
-      - name: Log in to DockerHub
+      - name: Log in to DockerHub 🛣️
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: docker build -t costadevop/my-portfolio:latest .
+      - name: Build and push Docker image 📦
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: costadevop/my-portfolio:latest
 
-      - name: Push Docker image
-        run: docker push costadevop/my-portfolio:latest
+      - name: Done 🌟
+        run: echo "Docker image build & push completed successfully!"
