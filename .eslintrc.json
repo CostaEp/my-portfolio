@@ -1,0 +1,12 @@
+{
+    "extends": ["react-app"],
+    "rules": {
+      "no-unused-vars": "warn",
+      "no-console": "off"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    }
+  }
