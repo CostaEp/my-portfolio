@@ -2,7 +2,8 @@
     "ci": {
       "collect": {
         "staticDistDir": "./build",
-        "url": ["http://localhost/index.html"]
+        "startServerCommand": "npm run start",
+        "url": ["http://localhost:3000"]
       },
       "assert": {
         "preset": "lighthouse:recommended"
