@@ -2,6 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
+beforeAll(() => {
+  window.matchMedia = window.matchMedia || function() {
+    return {
+      matches: false,
+      addListener: function() {},
+      removeListener: function() {}
+    };
+  };
+});
+
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: jest.fn().mockImplementation(query => ({
