@@ -1,9 +1,8 @@
 {
     "ci": {
       "collect": {
-        "staticDistDir": "./build",
-        "startServerCommand": "npm run start",
-        "url": ["http://localhost:3000"]
+        "url": ["http://localhost:$LHCI_SERVER_PORT/"],
+        "staticDistDir": "./build"
       },
       "assert": {
         "preset": "lighthouse:recommended"
