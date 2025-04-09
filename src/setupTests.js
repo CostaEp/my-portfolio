@@ -6,16 +6,17 @@ import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
 
-// Mock for matchMedia
-window.matchMedia = window.matchMedia || function () {
-  return {
+// 👇 הוספת mock ל-matchMedia
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
     matches: false,
-    media: '',
+    media: query,
     onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
-  };
-};
+  })),
+});
