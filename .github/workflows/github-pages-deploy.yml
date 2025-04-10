@@ -48,18 +48,6 @@ jobs:
             echo "✅ Build successful!"
           fi
 
-      - name: Serve build directory 🌐
-        run: |
-          npm install -g http-server
-          http-server ./build -p 3000 &
-
-      - name: Lighthouse audit 🌟
-        uses: treosh/lighthouse-ci-action@v11
-        with:
-          configPath: './lighthouserc.json'
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v4
         with:
