@@ -1,235 +1,166 @@
-# 🚀 Full Automation for Your Project with GitHub Actions, GitHub Pages, and Docker Hub
+# 🚀 My Portfolio: Full DevOps Pipeline & Deployment Guide
 
-This guide will walk you step by step through setting up a complete CI/CD pipeline:
-From pushing your code to GitHub, building a Docker image, deploying to GitHub Pages, and pushing your image to Docker Hub.
+Welcome to my personal portfolio project! 🌟  
+This repository demonstrates a **complete DevOps workflow** including:
 
-Perfect for open-source projects or personal portfolios!
+- GitHub Actions CI/CD
+- Automated Docker builds and push to DockerHub
+- Deployment to GitHub Pages
+- Professional badges, QR code, and more!
 
----
-
-## 📦 Prerequisites
-
-- GitHub account: [Sign up](https://github.com)
-- Docker Hub account: [Sign up](https://hub.docker.com) (if you use Docker)
-- Docker installed locally
-- Git installed locally
-- Code editor (Recommended: VSCode)
+> 📌 **Original portfolio template credit:** Thanks to [saadpasta/developerFolio](https://github.com/saadpasta/developerFolio) for the excellent portfolio starter! 🙏
 
 ---
 
-## 🧩 Step 1: Create a GitHub Repository
+## 📂 Project Structure
 
-1. Log in to GitHub and create a new repository.
-2. Give your project a name (e.g., `my-awesome-project`).
-3. Select:
-   - ✔️ Initialize this repository with a README
-4. Create the repository.
+- `src/` — React application source code
+- `.github/workflows/` — CI/CD workflows
+- `Dockerfile` — Docker image setup
+- `public/` — Static files for the portfolio
 
 ---
 
-## 🏗️ Step 2: Add Project Files
+## 🛠️ GitHub Actions: Workflow Explanation
 
-1. Clone your repository to your local machine:
+### ✅ Main Workflow: `Full DevOps Pipeline 🚀`
 
+Triggered on **push to main branch**.
+
+### Steps Breakdown:
+
+1. **Checkout repository**
+   ```bash
+   uses: actions/checkout@v4
+   ```
+2. **Setup Node.js environment**
+   ```bash
+   uses: actions/setup-node@v4
+   with:
+     node-version: '20'
+   ```
+3. **Cache dependencies** (to speed up builds)
+   ```bash
+   uses: actions/cache@v4
+   path: ~/.npm
+   ```
+4. **Install project dependencies**
+   ```bash
+   npm install
+   ```
+5. **Build project**
+   ```bash
+   npm run build
+   ```
+6. **Verify build success**
+   ```bash
+   if [ ! -f "build/index.html" ]; then exit 1; fi
+   ```
+7. **Deploy to GitHub Pages**
+   ```bash
+   uses: peaceiris/actions-gh-pages@v4
+   with:
+     publish_dir: ./build
+     github_token: ${{ secrets.GITHUB_TOKEN }}
+   ```
+8. **Build and push Docker image**
+   ```bash
+   uses: docker/build-push-action@v5
+   with:
+     push: true
+     tags: costadevop/my-portfolio:latest
+   ```
+
+### ✅ Result
+- 🔥 Automatic website deployment to GitHub Pages
+- 🐳 Docker image pushed to DockerHub automatically
+
+
+---
+
+## 🐳 Docker Image Info
+
+DockerHub repository: [costadevop/my-portfolio](https://hub.docker.com/r/costadevop/my-portfolio)
+
+### Build Locally:
 ```bash
-git clone https://github.com/your-username/my-awesome-project.git
-cd my-awesome-project
+docker build -t costadevop/my-portfolio:latest .
 ```
 
-2. Add your project files, like:
-   - Node.js project files (`package.json`, `src/`, etc.)
-   - Or Docker project files (`Dockerfile`, etc.)
-
-3. Create a GitHub Actions workflow:
-   - Path: `.github/workflows/ci.yml` (or multiple workflows, see below)
-
----
-
-## ⚙️ Step 3: Configure GitHub Actions (CI/CD Pipeline)
-
-### What is GitHub Actions?
-
-GitHub Actions is a powerful automation tool that will help you build, test, and deploy your code automatically every time you push changes.
-
----
-
-## 🚀 Option 1: Pipeline for Node.js Projects (DeveloperFolio etc.)
-
-This is perfect for projects like **DeveloperFolio** or any React/Node.js application.
-
-Create a file at `.github/workflows/nodejs-deploy.yml` with the following:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main
-
-permissions:
-  contents: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Verify build output exists
-        run: |
-          if [ ! -f "build/index.html" ]; then
-            echo "❌ Build failed: index.html not found!"
-            exit 1
-          fi
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-```
-
-### Explanation:
-
-| Step | Description |
-|------|-------------|
-| Checkout repository | Pulls your code from GitHub |
-| Set up Node.js | Installs Node.js 20 environment |
-| Install dependencies | Runs `npm install` |
-| Build project | Compiles your project |
-| Verify build | Makes sure `build/index.html` exists |
-| Deploy to GitHub Pages | Publishes your site to GitHub Pages! |
-
----
-
-## 🐳 Option 2: Pipeline for Docker Projects
-
-For backend or full-stack apps using Docker, use this pipeline.
-
-Create `.github/workflows/docker-deploy.yml`:
-
-```yaml
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: your-dockerhub-username/your-image-name:latest
-```
-
-### Explanation:
-
-| Step | Description |
-|------|-------------|
-| Checkout code | Pulls your code from GitHub |
-| Set up Docker Buildx | Sets up advanced Docker builds |
-| Login to DockerHub | Logs in using your secrets |
-| Build and push image | Builds Docker image and pushes it to Docker Hub |
-
----
-
-## 🔑 Step 4: Add Secrets to GitHub
-
-1. Go to your repository **Settings**.
-2. Navigate to **Secrets and variables > Actions**.
-3. Add the following secrets:
-   - `DOCKER_USERNAME` — your Docker Hub username (if using Docker pipeline)
-   - `DOCKER_PASSWORD` — your Docker Hub password or access token
-   - `GITHUB_TOKEN` — this is auto-generated, you don't need to add it manually.
-
----
-
-## 🐳 Step 5: Set Up Docker Hub (For Docker pipeline)
-
-1. Log in to Docker Hub.
-2. Create a new repository.
-3. Use the same name as in your Docker pipeline tags.
-
----
-
-## 🌐 Step 6: Set Up GitHub Pages
-
-1. Make sure your site builds to `build/` or `public/` directory.
-2. In GitHub:
-   - Go to **Settings > Pages**
-   - Under **Source**, select **GitHub Actions**.
-
----
-
-## 🚀 Step 7: Push Code and Run Pipeline
-
-1. Push your changes:
-
+### Run Locally:
 ```bash
-git add .
-git commit -m "Set up CI/CD pipeline"
-git push origin main
+docker run -p 3000:3000 costadevop/my-portfolio:latest
 ```
 
-2. Your pipeline will run automatically!
-3. Monitor progress under the **Actions** tab in GitHub.
-
-### How to Check Logs
-
-- Go to your GitHub repository.
-- Click on **Actions**.
-- Select your latest workflow run.
-- Expand each step to see detailed logs.
+### Push to DockerHub:
+```bash
+docker push costadevop/my-portfolio:latest
+```
 
 ---
 
-## 🎉 Done!
+## 🌐 GitHub Pages Setup Guide
 
-- ✅ Node.js / React projects deploy automatically to GitHub Pages!
-- ✅ Docker projects build and push to Docker Hub!
-- ✅ CI/CD pipeline working like a pro!
+1. Go to **Settings > Pages**
+2. Set **Source** to: `Deploy from a GitHub Actions workflow`
+3. After successful pipeline run, your site will be live at:
+
+```
+https://costaep.github.io/my-portfolio
+```
 
 ---
 
-## 🧭 Next Steps
+## 📛 Badges
 
-- Add tests to the pipeline.
-- Set up staging and production environments.
-- Enable notifications (Slack, Telegram, etc.).
-- Optimize build speed with caching.
+![GitHub repo size](https://img.shields.io/github/repo-size/CostaEp/my-portfolio)
+![GitHub stars](https://img.shields.io/github/stars/CostaEp/my-portfolio?style=social)
+![Docker Pulls](https://img.shields.io/docker/pulls/costadevop/my-portfolio)
+
+---
+
+## 📱 QR Code to Portfolio
+
+> Scan to open live website:
+
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://costaep.github.io/my-portfolio)
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!
+If you want to suggest improvements or fixes, feel free to fork this project and submit a PR.
+
+1. Fork the repo
+2. Create a new branch (`git checkout -b feature-name`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature-name`)
+5. Open a Pull Request 🎉
+
+---
+
+## 🚀 Future Improvements
+
+- [ ] Add multiple Docker tags (`latest`, `stable`, etc.)
+- [ ] Add Lighthouse performance testing step
+- [ ] Add security audit CI step
+- [ ] Add deploy preview (GitHub PR auto-preview)
+
+---
+
+## 📩 Contact
+
+For any questions, feel free to contact me:
+
+- GitHub: [CostaEp](https://github.com/CostaEp)
+- DockerHub: [costadevop](https://hub.docker.com/u/costadevop)
+
+
+---
+
+✅ **Enjoy the project and feel free to fork, star ⭐, and contribute!**
+
 
 ---
 
