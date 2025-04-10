@@ -76,11 +76,11 @@ const educationInfo = {
 const techStack = {
   viewSkillBars: true,
   experience: [
-    { Stack: "DevOps & CI/CD Automation (GitHub Actions, Docker)", progressPercentage: "85%" },
-    { Stack: "Cloud Infrastructure & IaC (AWS, Terraform)", progressPercentage: "80%" },
-    { Stack: "Programming & Scripting (Bash, Node.js)", progressPercentage: "75%" },
-    { Stack: "Monitoring & Debugging (Grafana, Prometheus)", progressPercentage: "80%" },
-    { Stack: "Microservices & Containerization (Docker, DockerHub)", progressPercentage: "80%" }
+    { Stack: "CI/CD Automation (GitHub Actions, DockerHub workflows)", progressPercentage: "90%" },
+    { Stack: "Cloud & Infrastructure as Code (AWS, Terraform, GitHub Pages)", progressPercentage: "85%" },
+    { Stack: "Scripting & Automation (Bash, Node.js)", progressPercentage: "80%" },
+    { Stack: "Observability & Troubleshooting (Prometheus, Grafana)", progressPercentage: "85%" },
+    { Stack: "Microservices Architecture & Containerization (Docker, Kubernetes, Multi-stage builds)", progressPercentage: "85%" }
   ],
   displayCodersrank: false
 };
