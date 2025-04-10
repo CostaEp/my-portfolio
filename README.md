@@ -8,8 +8,6 @@ This repository demonstrates a **complete DevOps workflow** including:
 - Deployment to GitHub Pages
 - Professional badges, QR code, and more!
 
-> 📌 **Original portfolio template credit:** Thanks to [saadpasta/developerFolio](https://github.com/saadpasta/developerFolio) for the excellent portfolio starter! 🙏
-
 ---
 
 ## 📂 Project Structure
@@ -165,9 +163,7 @@ For any questions, feel free to contact me:
 ---
 
 ## 🙏 Special Thanks
-
-Big thanks to the **DeveloperFolio Team** for their amazing portfolio project template!
-You can check it out here: [DeveloperFolio GitHub](https://github.com/saadpasta/developerFolio)
+> 📌 **Original portfolio template credit:** Thanks to [saadpasta/developerFolio](https://github.com/saadpasta/developerFolio) for the excellent portfolio starter! 🙏
 
 ---
 
