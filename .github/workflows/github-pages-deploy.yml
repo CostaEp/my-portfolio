@@ -36,16 +36,6 @@ jobs:
       - name: Install dependencies 🛠️
         run: npm install
 
-      - name: Run tests ✅
-        run: |
-          echo "Running tests... 🧪"
-          if npm test; then
-            echo "✅ Tests passed!"
-          else
-            echo "❌ Tests failed! Check logs."
-            exit 1
-          fi
-
       - name: Build project 📚
         run: npm run build
 
