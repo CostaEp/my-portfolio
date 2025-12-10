@@ -100,14 +100,14 @@ const workExperiences = {
       company: "Firewave (Startup)",
       date: "June 2024 – December 2025",
       desc: "Automating AWS infrastructure with Terraform, implementing CI/CD pipelines with GitHub Actions, deploying microservices to EKS, and integrating monitoring with Prometheus and Grafana.",
-      companylogo: require("./assets/images/Firewave-logo.avif")
+      companylogo: require("./assets/images/firewave_earth_logo.jpeg")
     },
     {
       role: "PMO",
       company: "Matrix, Herzliya",
       date: "May 2022 – December 2025",
       desc: "Leading WMS projects, automating processes with MSSQL scripting, and developing custom solutions with JavaScript and .NET.",
-      companylogo: require("./assets/images/logo-matrix-new.png") // תחליף לפי התמונה שתשמור
+      companylogo: require("./assets/images/Matrix_logo.jpg") // תחליף לפי התמונה שתשמור
     },
     {
       role: "Project Manager",
