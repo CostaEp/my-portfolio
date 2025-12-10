@@ -219,7 +219,7 @@ const achievementSection = {
       title: "Netcraft Academy – Full-Stack Developer Certification",
       subtitle:
         "Earned certification in full-stack web development, mastering JavaScript, React, Node.js, and SQL through hands-on projects.",
-      image: require("./assets/images/netcraft_logo.png"),
+      image: require("./assets/images/netcraft_logo.jpeg"),
       imageAlt: "Netcraft Academy Logo",
       footerLink: [
         {
