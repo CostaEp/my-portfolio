@@ -31,27 +31,52 @@ const socialMediaLinks = {
 };
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "DEVOPS ENGINEER SPECIALIZED IN CLOUD INFRASTRUCTURE & AUTOMATION",
+  title: "Core Expertise",
+  subTitle: "DEVOPS ENGINEER | CLOUD INFRASTRUCTURE | AUTOMATION & RELIABILITY ENGINEERING",
   skills: [
-    emoji("⚡ Automate infrastructure deployment with Terraform and AWS services (EKS, Lambda, RDS)"),
-    emoji("⚡ Build CI/CD pipelines with GitHub Actions and Jenkins for reliable deployments"),
-    emoji("⚡ Monitor systems using Prometheus and Grafana for real-time insights"),
-    emoji("⚡ Containerize applications using Docker and orchestrate with Kubernetes")
+    emoji("⚡ Architect, provision, and manage scalable cloud infrastructure using AWS (EKS, EC2, Lambda, RDS, S3) and Terraform"),
+    emoji("⚡ Design and implement end-to-end CI/CD pipelines with GitHub Actions, Jenkins, and ArgoCD for automated deployments"),
+    emoji("⚡ Build and maintain containerized microservices with Docker, Helm, and Kubernetes for high availability and scalability"),
+    emoji("⚡ Establish observability with Prometheus, Grafana, Loki, and Alertmanager for proactive monitoring and alerting"),
+    emoji("⚡ Automate system configuration and environment provisioning using Ansible, Bash, and Python scripting"),
+    emoji("⚡ Manage secure secrets and configurations with AWS Secrets Manager and GitOps workflows"),
+    emoji("⚡ Integrate automated testing, vulnerability scanning, and code-quality checks (SonarQube, Trivy, OWASP) into CI/CD pipelines"),
+    emoji("⚡ Collaborate cross-functionally with developers, QA, and operations to accelerate delivery and improve reliability"),
+    emoji("⚡ Optimize cost, performance, and resilience of cloud workloads through data-driven monitoring and continuous improvement")
   ],
-  softwareSkills: [
-    { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" },
-    { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
-    { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
-    { skillName: "Terraform", fontAwesomeClassname: "fas fa-code" },
-    { skillName: "GitHub Actions", fontAwesomeClassname: "fab fa-github" },
-    { skillName: "Jenkins", fontAwesomeClassname: "fas fa-tools" },
-    { skillName: "Prometheus", fontAwesomeClassname: "fas fa-chart-line" },
-    { skillName: "Grafana", fontAwesomeClassname: "fas fa-chart-pie" },
-    { skillName: "Node.js", fontAwesomeClassname: "fab fa-node" },
-    { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
-    { skillName: "MSSQL", fontAwesomeClassname: "fas fa-database" }
-  ],
+};
+softwareSkills: [
+  // ☁️ Cloud & Infrastructure
+  { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" },
+  { skillName: "Terraform", fontAwesomeClassname: "fas fa-cogs" },
+  { skillName: "Ansible", fontAwesomeClassname: "fas fa-server" },
+
+  // 🧱 Containers & Orchestration
+  { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
+  { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
+  { skillName: "Helm", fontAwesomeClassname: "fas fa-anchor" },
+
+  // 🔁 CI/CD & Automation
+  { skillName: "GitHub Actions", fontAwesomeClassname: "fab fa-github" },
+  { skillName: "Jenkins", fontAwesomeClassname: "fas fa-tools" },
+  { skillName: "ArgoCD", fontAwesomeClassname: "fas fa-code-branch" },
+
+  // 📊 Monitoring & Observability
+  { skillName: "Prometheus", fontAwesomeClassname: "fas fa-chart-line" },
+  { skillName: "Grafana", fontAwesomeClassname: "fas fa-chart-pie" },
+  { skillName: "Loki", fontAwesomeClassname: "fas fa-eye" },
+
+  // 💻 Development & Scripting
+  { skillName: "Node.js", fontAwesomeClassname: "fab fa-node" },
+  { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
+  { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
+  { skillName: "Bash", fontAwesomeClassname: "fas fa-terminal" },
+
+  // 🗄️ Databases & Data Tools
+  { skillName: "MSSQL", fontAwesomeClassname: "fas fa-database" },
+  { skillName: "PostgreSQL", fontAwesomeClassname: "fas fa-database" },
+  { skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-bar" },
+],
   display: true
 };
 
