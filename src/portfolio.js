@@ -17,7 +17,11 @@ const greeting = {
   username: "Costa Epshtein",
   title: "Hi there 👋, I'm Costa",
   subTitle: emoji(
-    "A passionate DevOps Engineer 🌍 dedicated to building cloud-native, scalable, and automated infrastructure. I love transforming complex challenges into elegant, efficient systems using AWS, Kubernetes, Docker, and Terraform. With strong focus on CI/CD, observability, and collaboration — I help teams deliver faster, safer, and smarter."
+    ```🚀 DevOps Engineer | Cloud Automation | Reliability Enthusiast
+
+Passionate about crafting cloud-native, scalable, and self-healing infrastructure 🌍. I turn complex challenges into elegant, automated solutions using AWS ☁️, Kubernetes ⚙️, Docker 🐳, and Terraform 🧱.
+
+With a strong focus on CI/CD pipelines 🔁, observability 📈, and team collaboration 🤝, I help organizations deliver software faster, safer, and smarter — driving innovation through automation.```
   ),
   resumeLink: "https://costaep.github.io/my-portfolio/Resume.pdf",
   displayGreeting: true
@@ -211,7 +215,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "View Program",
-          url: "https://www.realtimegroup.co.il/devops" // optional: replace with your actual program link
+          url: "https://rt-ed.co.il/program/devops/" // optional: replace with your actual program link
         }
       ]
     },
@@ -265,21 +269,21 @@ const blogSection = {
   subtitle: "In-depth notes, how-tos, and reflections on DevOps, cloud infrastructure, and automation (coming soon).",
   displayMediumBlogs: "false",
   blogs: [],
-  display: false
+  display: true
 };
 
 const talkSection = {
   title: "Talks & Meetups",
   subtitle: emoji("Tech talks, internal knowledge-sharing sessions, and community events will be added here soon 🎤"),
   talks: [],
-  display: false
+  display: true
 };
 
 const podcastSection = {
   title: emoji("Podcast 🎙️"),
   subtitle: "Planning future episodes about real-world DevOps challenges, cloud architectures, and career growth.",
   podcast: [],
-  display: false
+  display: true
 };
 
 const resumeSection = {
