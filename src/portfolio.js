@@ -102,11 +102,12 @@ const educationInfo = {
 const techStack = {
   viewSkillBars: true,
   experience: [
-    { Stack: "CI/CD Automation (GitHub Actions, DockerHub workflows)", progressPercentage: "90%" },
-    { Stack: "Cloud & Infrastructure as Code (AWS, Terraform, GitHub Pages)", progressPercentage: "85%" },
-    { Stack: "Scripting & Automation (Bash, Node.js)", progressPercentage: "80%" },
-    { Stack: "Observability & Troubleshooting (Prometheus, Grafana)", progressPercentage: "85%" },
-    { Stack: "Microservices Architecture & Containerization (Docker, Kubernetes, Multi-stage builds)", progressPercentage: "85%" }
+    { Stack: "CI/CD & Deployment Automation (GitHub Actions, Jenkins, ArgoCD, DockerHub)", progressPercentage: "90%" },
+    { Stack: "Cloud Infrastructure & IaC (AWS, Terraform, Ansible, Helm)", progressPercentage: "88%" },
+    { Stack: "Scripting & Automation (Bash, Python, Node.js)", progressPercentage: "85%" },
+    { Stack: "Observability & Monitoring (Prometheus, Grafana, Loki, Alertmanager)", progressPercentage: "87%" },
+    { Stack: "Containerization & Microservices (Docker, Kubernetes, Multi-stage builds, EKS)", progressPercentage: "90%" },
+    { Stack: "Version Control & Collaboration (Git, GitHub, GitOps workflows)", progressPercentage: "92%" }
   ],
   displayCodersrank: false
 };
@@ -132,7 +133,7 @@ const workExperiences = {
       role: "WMS PMO | Developer",
       company: "Matrix, Herzliya",
       date: "May 2022 – December 2025",
-      desc: "As part of Matrix IT’s Warehouse Management Systems (WMS) division, I led and developed end-to-end logistics automation projects for large enterprise clients. My role combined project management (PMO), DevOps, API development, data analytics, and technical integration, delivering high-performance, reliable warehouse solutions seamlessly connected with ERP, CMS, and business intelligence platforms.I worked closely with multidisciplinary teams — developers, infrastructure engineers, and client operations — to design and implement scalable, automated workflows that improved visibility, traceability, and operational efficiency across the supply chain.",
+      desc: "Led end-to-end WMS projects at Matrix IT, combining PMO, DevOps, and API integration to deliver automated logistics solutions connected with ERP and BI systems. Improved visibility, scalability, and efficiency across enterprise supply chains.",
       companylogo: require("./assets/images/Matrix_logo.jpg") // תחליף לפי התמונה שתשמור
     },
     {
@@ -164,14 +165,35 @@ const bigProjects = {
   display: false
 };
 
+// const achievementSection = {
+//   title: emoji("Achievements and Certifications 🏆"),
+//   subtitle: "Certifications and accomplishments along my journey.",
+//   achievementsCards: [
+//     {
+//       title: "AWS Certification Journey",
+//       subtitle: "Working and learning AWS certification - my goal is to pass it by the end of 2025",
+//       image: require("./assets/images/AWS.png"), // אם אין לך תמונה, אפשר לשים לוגו כללי
+//       imageAlt: "AWS Logo",
+//       footerLink: [
+//         {
+//           name: "AWS Certification Info",
+//           url: "https://aws.amazon.com/certification/"
+//         }
+//       ]
+//     }
+//   ],
+//   display: true
+// };
+
 const achievementSection = {
-  title: emoji("Achievements and Certifications 🏆"),
-  subtitle: "Certifications and accomplishments along my journey.",
+  title: emoji("Achievements & Certifications 🏆"),
+  subtitle: "Professional milestones, certifications, and continuous learning highlights from my DevOps journey.",
   achievementsCards: [
     {
       title: "AWS Certification Journey",
-      subtitle: "Working and learning AWS certification - my goal is to pass it by the end of 2025",
-      image: require("./assets/images/AWS.png"), // אם אין לך תמונה, אפשר לשים לוגו כללי
+      subtitle:
+        "Currently advancing through the AWS certification path with hands-on experience in cloud infrastructure, automation, and security. Targeting AWS Certified DevOps Engineer by the end of 2025.",
+      image: require("./assets/images/AWS.png"),
       imageAlt: "AWS Logo",
       footerLink: [
         {
@@ -179,42 +201,104 @@ const achievementSection = {
           url: "https://aws.amazon.com/certification/"
         }
       ]
+    },
+    {
+      title: "Real Time College – DevOps Engineering Program",
+      subtitle:
+        "Completed an intensive DevOps program focused on AWS, Kubernetes, Terraform, Jenkins, and Prometheus/Grafana — applying real-world automation and CI/CD practices.",
+      image: require("./assets/images/real_time_logo.png"),
+      imageAlt: "Real Time College Logo",
+      footerLink: [
+        {
+          name: "View Program",
+          url: "https://www.realtimegroup.co.il/devops" // optional: replace with your actual program link
+        }
+      ]
+    },
+    {
+      title: "Netcraft Academy – Full-Stack Developer Certification",
+      subtitle:
+        "Earned certification in full-stack web development, mastering JavaScript, React, Node.js, and SQL through hands-on projects.",
+      image: require("./assets/images/netcraft_logo.png"),
+      imageAlt: "Netcraft Academy Logo",
+      footerLink: [
+        {
+          name: "Visit Netcraft Academy",
+          url: "https://www.netcraftacademy.co.il/" // optional: replace with official link
+        }
+      ]
     }
   ],
   display: true
 };
 
+// const blogSection = {
+//   title: "Blogs",
+//   subtitle: "Sharing knowledge and insights about DevOps and cloud technologies.",
+//   displayMediumBlogs: "false",
+//   blogs: [],
+//   display: false
+// };
+
+// const talkSection = {
+//   title: "Talks",
+//   subtitle: emoji("Coming soon!"),
+//   talks: [],
+//   display: false
+// };
+
+// const podcastSection = {
+//   title: emoji("Podcast 🎙️"),
+//   subtitle: "Coming soon!",
+//   podcast: [],
+//   display: false
+// };
+
+// const resumeSection = {
+//   title: "Resume",
+//   subtitle: "Feel free to download my resume",
+//   display: true
+// };
+
 const blogSection = {
-  title: "Blogs",
-  subtitle: "Sharing knowledge and insights about DevOps and cloud technologies.",
+  title: "Articles & Blog Posts",
+  subtitle: "In-depth notes, how-tos, and reflections on DevOps, cloud infrastructure, and automation (coming soon).",
   displayMediumBlogs: "false",
   blogs: [],
   display: false
 };
 
 const talkSection = {
-  title: "Talks",
-  subtitle: emoji("Coming soon!"),
+  title: "Talks & Meetups",
+  subtitle: emoji("Tech talks, internal knowledge-sharing sessions, and community events will be added here soon 🎤"),
   talks: [],
   display: false
 };
 
 const podcastSection = {
   title: emoji("Podcast 🎙️"),
-  subtitle: "Coming soon!",
+  subtitle: "Planning future episodes about real-world DevOps challenges, cloud architectures, and career growth.",
   podcast: [],
   display: false
 };
 
 const resumeSection = {
   title: "Resume",
-  subtitle: "Feel free to download my resume",
+  subtitle: "Download my resume to get a full overview of my DevOps experience, skills, and professional background.",
   display: true
 };
 
+// const contactInfo = {
+//   title: emoji("Contact Me ☎️"),
+//   subtitle: "Open for opportunities and collaborations!",
+//   number: "+972-52-5381655",
+//   email_address: "Costa84@gmail.com"
+// };
+
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
-  subtitle: "Open for opportunities and collaborations!",
+  title: emoji("Let's Connect ☎️"),
+  subtitle:
+    "I'm always open to exciting DevOps opportunities, cloud projects, or collaborations. Feel free to reach out — let's build something great together!",
   number: "+972-52-5381655",
   email_address: "Costa84@gmail.com"
 };
@@ -224,7 +308,7 @@ const twitterDetails = {
   display: false
 };
 
-const isHireable = true;
+const isHireable = false;
 
 export {
   illustration,
