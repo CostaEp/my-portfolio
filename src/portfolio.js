@@ -103,24 +103,24 @@ const workExperiences = {
       companylogo: require("./assets/images/firewave_earth_logo.jpeg")
     },
     {
-      role: "PMO",
+      role: "WMS PMO | Developer",
       company: "Matrix, Herzliya",
       date: "May 2022 – December 2025",
-      desc: "Leading WMS projects, automating processes with MSSQL scripting, and developing custom solutions with JavaScript and .NET.",
+      desc: "As part of Matrix IT’s Warehouse Management Systems (WMS) division, I led and developed end-to-end logistics automation projects for large enterprise clients. My role combined project management (PMO), DevOps, API development, data analytics, and technical integration, delivering high-performance, reliable warehouse solutions seamlessly connected with ERP, CMS, and business intelligence platforms.I worked closely with multidisciplinary teams — developers, infrastructure engineers, and client operations — to design and implement scalable, automated workflows that improved visibility, traceability, and operational efficiency across the supply chain.",
       companylogo: require("./assets/images/Matrix_logo.jpg") // תחליף לפי התמונה שתשמור
     },
     {
-      role: "Project Manager",
+      role: "IT Project Manager",
       company: "LogistiCare, Lod",
       date: "Jan 2020 – May 2022",
-      desc: "Managing BI and dashboard projects, delivering solutions that improve client decision-making.",
+      desc: "As part of the IT team at Logisticare, I led WMS (Warehouse Management System) projects and technical initiatives aimed at optimizing logistics operations and data visibility. My work combined project leadership, process design, custom development, and business data analysis, ensuring smooth integration between operational teams, external clients, and technology systems..",
       companylogo: require("./assets/images/logisticare.png") // תחליף לפי התמונה שתשמור
     },
     {
       role: "Military Officer",
       company: "IDF",
       date: "June 2004 – Aug 2014",
-      desc: "Arming Officer and Safety Director, led combat units during military operations.",
+      desc: "Served as an Ordnance Officer (Rank: Major), leading a maintenance and technology platoon responsible for the readiness, safety, and operational availability of all armored vehicles, weapon systems, and support equipment across multiple combat units. Managed a diverse team of professional technicians and soldiers, ensuring full technological and logistical readiness at all times.",
       companylogo: require("./assets/images/IDF.png") // תחליף לפי התמונה שתשמור
     }
   ]
