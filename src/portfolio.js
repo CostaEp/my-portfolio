@@ -90,15 +90,22 @@ const workExperiences = {
   experience: [
     {
       role: "DevOps Engineer",
+      company: "Elbit Systems",
+      date: "December 2025 – Present",
+      desc: "As a DevOps Engineer at Elbit Systems, I design, implement, and maintain CI/CD pipelines and cloud-native infrastructure to support large-scale, mission-critical systems. My work bridges development and operations, ensuring fast, reliable, and secure delivery of software across environments.",
+      companylogo: require("./assets/images/Elbit-logo.png")
+    },
+    {
+      role: "DevOps Engineer",
       company: "Firewave (Startup)",
-      date: "June 2024 – Present",
+      date: "June 2024 – December 2025",
       desc: "Automating AWS infrastructure with Terraform, implementing CI/CD pipelines with GitHub Actions, deploying microservices to EKS, and integrating monitoring with Prometheus and Grafana.",
       companylogo: require("./assets/images/Firewave-logo.avif")
     },
     {
       role: "PMO",
       company: "Matrix, Herzliya",
-      date: "May 2022 – Present",
+      date: "May 2022 – December 2025",
       desc: "Leading WMS projects, automating processes with MSSQL scripting, and developing custom solutions with JavaScript and .NET.",
       companylogo: require("./assets/images/logo-matrix-new.png") // תחליף לפי התמונה שתשמור
     },
