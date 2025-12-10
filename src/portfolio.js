@@ -89,14 +89,13 @@ const educationInfo = {
       subHeader: "DevOps Program",
       duration: "Aug 2022 - Aug 2023",
       desc: "Comprehensive, hands-on DevOps program focused on cloud infrastructure, automation, and observability. Gained practical experience with AWS, Kubernetes, Docker, Terraform, Jenkins, GitHub Actions, and monitoring stacks such as Prometheus and Grafana — applying modern DevOps methodologies, CI/CD best practices, and infrastructure as code principles in real-world projects."
-},
     },
-{
-  schoolName: "Netcraft Academy",
-  subHeader: "Full-Stack Developer Certification",
-  duration: "2019 – 2020",
-  desc: "Comprehensive program covering front-end and back-end web development. Gained hands-on experience with JavaScript, React, Node.js, SQL, and other modern technologies — building dynamic, responsive, and data-driven applications from concept to deployment."
-},
+    {
+      schoolName: "Netcraft Academy",
+      subHeader: "Full-Stack Developer Certification",
+      duration: "2019 – 2020",
+      desc: "Comprehensive program covering front-end and back-end web development. Gained hands-on experience with JavaScript, React, Node.js, SQL, and other modern technologies — building dynamic, responsive, and data-driven applications from concept to deployment."
+    }
   ]
 };
 
