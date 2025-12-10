@@ -16,14 +16,13 @@ const illustration = {
 const greeting = {
   username: "Costa Epshtein",
   title: "Hi there 👋, I'm Costa",
-  subTitle: emoji(
-    "🚀 **DevOps Engineer | Cloud Automation | Reliability Enthusiast** \n\n" +
-    "🌍 Passionate about crafting cloud-native, scalable, and self-healing infrastructure. " +
-    "I turn complex challenges into elegant, automated solutions using **AWS ☁️**, **Kubernetes ⚙️**, **Docker 🐳**, and **Terraform 🧱**. \n\n" +
-    "🔁 With a strong focus on CI/CD pipelines, observability 📈, and team collaboration 🤝 — " +
-    "I help organizations deliver software faster, safer, and smarter — driving innovation through automation."
-  ),
-  resumeLink: "https://costaep.github.io/my-portfolio/Resume.pdf",
+subTitle: emoji(
+  "🚀 DevOps Engineer | Cloud Automation | Reliability Enthusiast<br/><br/>" +
+  "🌍 Passionate about crafting cloud-native, scalable, and self-healing infrastructure.<br/>" +
+  "I transform complex challenges into elegant, automated solutions using AWS ☁️, Kubernetes ⚙️, Docker 🐳, and Terraform 🧱.<br/><br/>" +
+  "🔁 Focused on CI/CD pipelines, observability 📈, and collaboration 🤝 — helping organizations deliver software faster, safer, and smarter through automation and innovation."
+),
+resumeLink: "https://costaep.github.io/my-portfolio/Resume.pdf",
   displayGreeting: true
 };
 
