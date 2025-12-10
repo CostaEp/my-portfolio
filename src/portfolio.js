@@ -158,11 +158,71 @@ const openSource = {
   display: false
 };
 
+// const bigProjects = {
+//   title: "Projects",
+//   subtitle: "Some personal and professional projects I've worked on.",
+//   projects: [],
+//   display: false
+// };
+
 const bigProjects = {
-  title: "Projects",
-  subtitle: "Some personal and professional projects I've worked on.",
-  projects: [],
-  display: false
+  title: "DevOps Projects",
+  subtitle: "End-to-end CI/CD, cloud, and automation projects from my GitHub.",
+  projects: [
+    {
+      image: require("./assets/images/AWS.png"),
+      projectName: "My Portfolio – Full DevOps Pipeline",
+      projectDesc:
+        "Personal portfolio application with a complete CI/CD pipeline: GitHub Actions build, Docker image build & push to DockerHub, and automatic deployment to GitHub Pages.",
+      footerLink: [
+        {
+          name: "View on GitHub",
+          url: "https://github.com/CostaEp/my-portfolio"
+        },
+        {
+          name: "Live Demo",
+          url: "https://costaep.github.io/my-portfolio/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/AWS.png"),
+      projectName: "Full DevOps Project – AWS EKS",
+      projectDesc:
+        "Architecture and implementation of a full DevOps pipeline for containerized microservices: Terraform-provisioned AWS EKS, Docker, GitHub Actions CI/CD, JFrog & DockerHub registries, and monitoring with Prometheus, Grafana, and Loki.",
+      footerLink: [
+        {
+          name: "View on GitHub",
+          url: "https://github.com/CostaEp/Full_DevOps_project"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/AWS.png"),
+      projectName: "Jenkins CI/CD on RedHat UBI8",
+      projectDesc:
+        "Custom Jenkins image based on RedHat UBI8 with Docker CLI and Java 17. Implements CI/CD pipelines to build Docker images for the portfolio app and push them to DockerHub and JFrog with environment-based promotion (DEV/PROD).",
+      footerLink: [
+        {
+          name: "View on GitHub",
+          url: "https://github.com/CostaEp/jenkins_redhat_server"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/AWS.png"),
+      projectName: "YAML-Powered Resume Automation",
+      projectDesc:
+        "Infrastructure-as-text resume: data stored in YAML, converted to Markdown and PDF using Python and Pandoc, automated with GitHub Actions so every change in YAML generates a fresh resume PDF.",
+      footerLink: [
+        {
+          name: "View on GitHub",
+          url: "https://github.com/CostaEp/my-resume"
+        }
+      ]
+    }
+  ],
+  display: true
 };
 
 // const achievementSection = {
