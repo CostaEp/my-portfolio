@@ -170,7 +170,7 @@ const bigProjects = {
   subtitle: "End-to-end CI/CD, cloud, and automation projects from my GitHub.",
   projects: [
     {
-      image: require("./assets/images/AWS.png"),
+      image: require("./assets/images/dev_proj_logo.gif"),
       projectName: "My Portfolio – Full DevOps Pipeline",
       projectDesc:
         "Personal portfolio application with a complete CI/CD pipeline: GitHub Actions build, Docker image build & push to DockerHub, and automatic deployment to GitHub Pages.",
@@ -186,7 +186,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/AWS.png"),
+      image: require("./assets/images/dev_proj_logo.gif"),
       projectName: "Full DevOps Project – AWS EKS",
       projectDesc:
         "Architecture and implementation of a full DevOps pipeline for containerized microservices: Terraform-provisioned AWS EKS, Docker, GitHub Actions CI/CD, JFrog & DockerHub registries, and monitoring with Prometheus, Grafana, and Loki.",
@@ -198,7 +198,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/AWS.png"),
+      image: require("./assets/images/dev_proj_logo.gif"),
       projectName: "Jenkins CI/CD on RedHat UBI8",
       projectDesc:
         "Custom Jenkins image based on RedHat UBI8 with Docker CLI and Java 17. Implements CI/CD pipelines to build Docker images for the portfolio app and push them to DockerHub and JFrog with environment-based promotion (DEV/PROD).",
@@ -210,7 +210,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/AWS.png"),
+      image: require("./assets/images/dev_proj_logo.gif"),
       projectName: "YAML-Powered Resume Automation",
       projectDesc:
         "Infrastructure-as-text resume: data stored in YAML, converted to Markdown and PDF using Python and Pandoc, automated with GitHub Actions so every change in YAML generates a fresh resume PDF.",
