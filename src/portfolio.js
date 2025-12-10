@@ -15,9 +15,9 @@ const illustration = {
 
 const greeting = {
   username: "Costa Epshtein",
-  title: "Hi all, I'm Costa",
+  title: "Hi there 👋, I'm Costa",
   subTitle: emoji(
-    "A passionate DevOps Engineer 🚀 with hands-on experience in AWS, CI/CD, Kubernetes, Docker, Terraform, and monitoring tools like Prometheus and Grafana. Automating infrastructure and delivering scalable solutions."
+    "A passionate DevOps Engineer 🌍 dedicated to building cloud-native, scalable, and automated infrastructure. I love transforming complex challenges into elegant, efficient systems using AWS, Kubernetes, Docker, and Terraform. With strong focus on CI/CD, observability, and collaboration — I help teams deliver faster, safer, and smarter."
   ),
   resumeLink: "https://costaep.github.io/my-portfolio/Resume.pdf",
   displayGreeting: true
