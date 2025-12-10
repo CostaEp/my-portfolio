@@ -87,14 +87,15 @@ const educationInfo = {
       schoolName: "Real Time College",
       subHeader: "DevOps Program",
       duration: "Aug 2022 - Aug 2023",
-      desc: "Focused on Kubernetes, CI/CD, AWS, Terraform, and Monitoring tools."
+      desc: "Comprehensive, hands-on DevOps program focused on cloud infrastructure, automation, and observability. Gained practical experience with AWS, Kubernetes, Docker, Terraform, Jenkins, GitHub Actions, and monitoring stacks such as Prometheus and Grafana — applying modern DevOps methodologies, CI/CD best practices, and infrastructure as code principles in real-world projects."
+},
     },
-    {
-      schoolName: "Netcraft Academy",
-      subHeader: "Fullstack Developer Certification",
-      duration: "2019 - 2020",
-      desc: "Studied JavaScript, React, Node.js, and .NET development."
-    }
+{
+  schoolName: "Netcraft Academy",
+  subHeader: "Full-Stack Developer Certification",
+  duration: "2019 – 2020",
+  desc: "Comprehensive program covering front-end and back-end web development. Gained hands-on experience with JavaScript, React, Node.js, SQL, and other modern technologies — building dynamic, responsive, and data-driven applications from concept to deployment."
+},
   ]
 };
 
@@ -124,7 +125,7 @@ const workExperiences = {
       role: "DevOps Engineer",
       company: "Firewave (Startup)",
       date: "June 2024 – December 2025",
-      desc: "Automating AWS infrastructure with Terraform, implementing CI/CD pipelines with GitHub Actions, deploying microservices to EKS, and integrating monitoring with Prometheus and Grafana.",
+      desc: "Leading DevOps initiatives for a fast-growing startup by automating AWS infrastructure with Terraform, designing CI/CD pipelines in GitHub Actions, and deploying containerized microservices on EKS. Integrated Prometheus and Grafana for observability, ensuring high availability, performance, and scalability across all environments.",
       companylogo: require("./assets/images/firewave_earth_logo.jpeg")
     },
     {
