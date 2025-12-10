@@ -17,8 +17,7 @@ const greeting = {
   username: "Costa Epshtein",
   title: "Hi there 👋, I'm Costa",
   subTitle: emoji(
-    "🚀 DevOps Engineer | Cloud Automation | Reliability Enthusiast \n\n Passionate about crafting cloud-native, scalable, and self-healing infrastructure 🌍. I turn complex challenges into elegant, automated solutions using AWS ☁️, Kubernetes ⚙️, Docker 🐳, and Terraform 🧱. With a strong focus on CI/CD pipelines 🔁, observability 📈, and team collaboration 🤝, I help organizations deliver software faster, safer, and smarter — driving innovation through automation.
-  ),
+    "🚀 DevOps Engineer | Cloud Automation | Reliability Enthusiast \n\n Passionate about crafting cloud-native, scalable, and self-healing infrastructure 🌍. I turn complex challenges into elegant, automated solutions using AWS ☁️, Kubernetes ⚙️, Docker 🐳, and Terraform 🧱. With a strong focus on CI/CD pipelines 🔁, observability 📈, and team collaboration 🤝, I help organizations deliver software faster, safer, and smarter — driving innovation through automation."),
   resumeLink: "https://costaep.github.io/my-portfolio/Resume.pdf",
   displayGreeting: true
 };
