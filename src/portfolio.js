@@ -44,39 +44,40 @@ const skillsSection = {
     emoji("⚡ Collaborate cross-functionally with developers, QA, and operations to accelerate delivery and improve reliability"),
     emoji("⚡ Optimize cost, performance, and resilience of cloud workloads through data-driven monitoring and continuous improvement")
   ],
-};
-softwareSkills: [
-  // ☁️ Cloud & Infrastructure
-  { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" },
-  { skillName: "Terraform", fontAwesomeClassname: "fas fa-cogs" },
-  { skillName: "Ansible", fontAwesomeClassname: "fas fa-server" },
 
-  // 🧱 Containers & Orchestration
-  { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
-  { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
-  { skillName: "Helm", fontAwesomeClassname: "fas fa-anchor" },
+  softwareSkills: [
+    // ☁️ Cloud & Infrastructure
+    { skillName: "AWS", fontAwesomeClassname: "fab fa-aws" },
+    { skillName: "Terraform", fontAwesomeClassname: "fas fa-cogs" },
+    { skillName: "Ansible", fontAwesomeClassname: "fas fa-server" },
 
-  // 🔁 CI/CD & Automation
-  { skillName: "GitHub Actions", fontAwesomeClassname: "fab fa-github" },
-  { skillName: "Jenkins", fontAwesomeClassname: "fas fa-tools" },
-  { skillName: "ArgoCD", fontAwesomeClassname: "fas fa-code-branch" },
+    // 🧱 Containers & Orchestration
+    { skillName: "Docker", fontAwesomeClassname: "fab fa-docker" },
+    { skillName: "Kubernetes", fontAwesomeClassname: "fas fa-network-wired" },
+    { skillName: "Helm", fontAwesomeClassname: "fas fa-anchor" },
 
-  // 📊 Monitoring & Observability
-  { skillName: "Prometheus", fontAwesomeClassname: "fas fa-chart-line" },
-  { skillName: "Grafana", fontAwesomeClassname: "fas fa-chart-pie" },
-  { skillName: "Loki", fontAwesomeClassname: "fas fa-eye" },
+    // 🔁 CI/CD & Automation
+    { skillName: "GitHub Actions", fontAwesomeClassname: "fab fa-github" },
+    { skillName: "Jenkins", fontAwesomeClassname: "fas fa-tools" },
+    { skillName: "ArgoCD", fontAwesomeClassname: "fas fa-code-branch" },
 
-  // 💻 Development & Scripting
-  { skillName: "Node.js", fontAwesomeClassname: "fab fa-node" },
-  { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
-  { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
-  { skillName: "Bash", fontAwesomeClassname: "fas fa-terminal" },
+    // 📊 Monitoring & Observability
+    { skillName: "Prometheus", fontAwesomeClassname: "fas fa-chart-line" },
+    { skillName: "Grafana", fontAwesomeClassname: "fas fa-chart-pie" },
+    { skillName: "Loki", fontAwesomeClassname: "fas fa-eye" },
 
-  // 🗄️ Databases & Data Tools
-  { skillName: "MSSQL", fontAwesomeClassname: "fas fa-database" },
-  { skillName: "PostgreSQL", fontAwesomeClassname: "fas fa-database" },
-  { skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-bar" },
-],
+    // 💻 Development & Scripting
+    { skillName: "Node.js", fontAwesomeClassname: "fab fa-node" },
+    { skillName: "JavaScript", fontAwesomeClassname: "fab fa-js" },
+    { skillName: "Python", fontAwesomeClassname: "fab fa-python" },
+    { skillName: "Bash", fontAwesomeClassname: "fas fa-terminal" },
+
+    // 🗄️ Databases & Data Tools
+    { skillName: "MSSQL", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "PostgreSQL", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "Power BI", fontAwesomeClassname: "fas fa-chart-bar" },
+  ],
+
   display: true
 };
 
