@@ -53,6 +53,58 @@
   line-height: 40px;
 }
 
+.profile-pic {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
+  transition: all 0.4s ease-in-out;
+}
+
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  width: 100%;
+}
+
+.profile-pic-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  padding: 4px; /* Border thickness */
+  background: linear-gradient(135deg, #6c63ff 0%, #3b82f6 100%);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  mask-composite: exclude;
+  width: 360px;
+  height: 360px;
+  margin: auto;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 25px rgba(108, 99, 255, 0.5);
+}
+
+.profile-pic-container:hover::before {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(108, 99, 255, 0.7);
+}
+
+.profile-pic-container:hover .profile-pic {
+  transform: scale(1.02);
+}
+
 .greeting-image-div > img {
   max-width: 100%;
   height: auto;

@@ -3,9 +3,9 @@ Certain colors are used for different and multiply types of elements.
 For greater control over colors visit each components .scss file. */
 
 // button colors
-$buttonColor: #55198b;
-$buttonHover: #8c43ce;
-$topButtonHover: #000;
+$buttonColor: linear-gradient(135deg, #6c63ff 0%, #3b82f6 100%);
+$buttonHover: linear-gradient(135deg, #5b54e3 0%, #2563eb 100%);
+$topButtonHover: rgba(0, 0, 0, 0.4);
 
 // text colors light theme
 $titleColor: #000000;
@@ -16,14 +16,14 @@ $talkCardSubTitle: #7f8287;
 $blogCardTitleColor: #262626;
 
 // text color dark theme
-$textColorDark: #ffffff;
+$textColorDark: #f8f9fa;
 
 // toggle switch colors
-$toggleCheck: #2196f3;
+$toggleCheck: #3b82f6;
 $toggleSwitchSliderBG: #ccc;
 
 // githubRepo specific colors
-$githubRepoCardLanguageColorBG: #0000ff;
+$githubRepoCardLanguageColorBG: #3b82f6;
 $githubRepoCardColor: rgb(88, 96, 105);
 $githubRepoCardRepoCardStatsColor: rgb(106, 115, 125);
 $githubRepoCardRepoNameColor: rgb(36, 41, 46);
@@ -31,17 +31,17 @@ $githubProfileCardLocationTS: #ffebcd;
 $githubProfileCardBorder: #6c63ff;
 
 // light background colors
-$lightBackground1: #fff;
-$lightBackground2: rgb(255, 255, 255);
-$lightBackground3: #f5f2f4;
+$lightBackground1: #ffffff;
+$lightBackground2: #fafdff;
+$lightBackground3: #f5f6fa;
 $blogCardContainerColor: #586069;
 // dark background colors
-$darkBackground: #171c28;
+$darkBackground: #0B0F19; /* Premium deep space dark theme */
 
 // light theme box shadows
-$lightBoxShadowDark: rgba(0, 0, 0, 0.2);
-$lightBoxShadow: rgba(0, 0, 0, 0.1);
-$lightBoxShadowDarker: rgba(0, 0, 0, 0.3);
+$lightBoxShadowDark: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$lightBoxShadow: rgba(100, 100, 111, 0.1) 0px 7px 29px;
+$lightBoxShadowDarker: rgba(149, 157, 165, 0.3) 0px 10px 24px;
 
 // dark theme box shadows
 $darkBoxShadow: #d9dbdf;

@@ -1,4 +1,5 @@
 import img_0 from "../../assets/images/manOnTable.svg";
+import myProfilePic from "../../assets/images/costa_profile.jpg";
 import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
@@ -54,14 +55,17 @@ export default function Greeting() {
             </div>
           </div>
           <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
+            {/* 
+              Using your GitHub Avatar as the default profile picture! 
+              If you want to use a local image, import it at the top and change the src below.
+            */}
+            <div className="profile-pic-container">
               <img
-                alt="man sitting on table"
-                src={img_0}
-              ></img>
-            )}
+                alt="Costa Epshtein Profile"
+                className="profile-pic"
+                src={myProfilePic}
+              />
+            </div>
           </div>
         </div>
       </div>
