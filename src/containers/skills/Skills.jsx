@@ -1,3 +1,4 @@
+import img_0 from "../../assets/images/developerActivity.svg";
 import React, {useContext} from "react";
 import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
@@ -22,7 +23,7 @@ export default function Skills() {
             ) : (
               <img
                 alt="Man Working"
-                src={require("../../assets/images/developerActivity.svg")}
+                src={img_0}
               ></img>
             )}
           </div>

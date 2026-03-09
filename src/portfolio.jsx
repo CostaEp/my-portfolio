@@ -1,3 +1,16 @@
+import img_0 from "./assets/images/Elbit-logo.png";
+import img_1 from "./assets/images/firewave_earth_logo.jpeg";
+import img_2 from "./assets/images/Matrix_logo.jpg";
+import img_3 from "./assets/images/logisticare.png";
+import img_4 from "./assets/images/IDF.png";
+import img_5 from "./assets/images/dev_proj_logo.gif";
+import img_6 from "./assets/images/dev_proj_logo.gif";
+import img_7 from "./assets/images/dev_proj_logo.gif";
+import img_8 from "./assets/images/dev_proj_logo.gif";
+import img_9 from "./assets/images/AWS.png";
+import img_10 from "./assets/images/AWS.png";
+import img_11 from "./assets/images/real_time_logo.png";
+import img_12 from "./assets/images/netcraft_logo.jpeg";
 /* Costa Epshtein Portfolio */
 
 import emoji from "react-easy-emoji";
@@ -120,35 +133,35 @@ const workExperiences = {
       company: "Elbit Systems",
       date: "December 2025 – Present",
       desc: "As a DevOps Engineer at Elbit Systems, I design, implement, and maintain CI/CD pipelines and cloud-native infrastructure to support large-scale, mission-critical systems. My work bridges development and operations, ensuring fast, reliable, and secure delivery of software across environments.",
-      companylogo: require("./assets/images/Elbit-logo.png")
+      companylogo: img_0
     },
     {
       role: "DevOps Engineer",
       company: "Firewave (Startup)",
       date: "June 2024 – December 2025",
       desc: "Leading DevOps initiatives for a fast-growing startup by automating AWS infrastructure with Terraform, designing CI/CD pipelines in GitHub Actions, and deploying containerized microservices on EKS. Integrated Prometheus and Grafana for observability, ensuring high availability, performance, and scalability across all environments.",
-      companylogo: require("./assets/images/firewave_earth_logo.jpeg")
+      companylogo: img_1
     },
     {
       role: "WMS PMO | Developer",
       company: "Matrix, Herzliya",
       date: "May 2022 – December 2025",
       desc: "Led end-to-end WMS projects at Matrix IT, combining PMO, DevOps, and API integration to deliver automated logistics solutions connected with ERP and BI systems. Improved visibility, scalability, and efficiency across enterprise supply chains.",
-      companylogo: require("./assets/images/Matrix_logo.jpg") // תחליף לפי התמונה שתשמור
+      companylogo: img_2 // תחליף לפי התמונה שתשמור
     },
     {
       role: "IT Project Manager",
       company: "LogistiCare, Lod",
       date: "Jan 2020 – May 2022",
       desc: "As part of the IT team at Logisticare, I led WMS (Warehouse Management System) projects and technical initiatives aimed at optimizing logistics operations and data visibility. My work combined project leadership, process design, custom development, and business data analysis, ensuring smooth integration between operational teams, external clients, and technology systems..",
-      companylogo: require("./assets/images/logisticare.png") // תחליף לפי התמונה שתשמור
+      companylogo: img_3 // תחליף לפי התמונה שתשמור
     },
     {
       role: "Military Officer",
       company: "IDF",
       date: "June 2004 – Aug 2014",
       desc: "Served as an Ordnance Officer (Rank: Major), leading a maintenance and technology platoon responsible for the readiness, safety, and operational availability of all armored vehicles, weapon systems, and support equipment across multiple combat units. Managed a diverse team of professional technicians and soldiers, ensuring full technological and logistical readiness at all times.",
-      companylogo: require("./assets/images/IDF.png") // תחליף לפי התמונה שתשמור
+      companylogo: img_4 // תחליף לפי התמונה שתשמור
     }
   ]
 };
@@ -170,7 +183,7 @@ const bigProjects = {
   subtitle: "End-to-end CI/CD, cloud, and automation projects from my GitHub.",
   projects: [
     {
-      image: require("./assets/images/dev_proj_logo.gif"),
+      image: img_5,
       projectName: "My Portfolio – Full DevOps Pipeline",
       projectDesc:
         "Personal portfolio application with a complete CI/CD pipeline: GitHub Actions build, Docker image build & push to DockerHub, and automatic deployment to GitHub Pages.",
@@ -186,7 +199,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/dev_proj_logo.gif"),
+      image: img_6,
       projectName: "Full DevOps Project – AWS EKS",
       projectDesc:
         "Architecture and implementation of a full DevOps pipeline for containerized microservices: Terraform-provisioned AWS EKS, Docker, GitHub Actions CI/CD, JFrog & DockerHub registries, and monitoring with Prometheus, Grafana, and Loki.",
@@ -198,7 +211,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/dev_proj_logo.gif"),
+      image: img_7,
       projectName: "Jenkins CI/CD on RedHat UBI8",
       projectDesc:
         "Custom Jenkins image based on RedHat UBI8 with Docker CLI and Java 17. Implements CI/CD pipelines to build Docker images for the portfolio app and push them to DockerHub and JFrog with environment-based promotion (DEV/PROD).",
@@ -210,7 +223,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/dev_proj_logo.gif"),
+      image: img_8,
       projectName: "YAML-Powered Resume Automation",
       projectDesc:
         "Infrastructure-as-text resume: data stored in YAML, converted to Markdown and PDF using Python and Pandoc, automated with GitHub Actions so every change in YAML generates a fresh resume PDF.",
@@ -232,7 +245,7 @@ const bigProjects = {
 //     {
 //       title: "AWS Certification Journey",
 //       subtitle: "Working and learning AWS certification - my goal is to pass it by the end of 2025",
-//       image: require("./assets/images/AWS.png"), // אם אין לך תמונה, אפשר לשים לוגו כללי
+//       image: img_9, // אם אין לך תמונה, אפשר לשים לוגו כללי
 //       imageAlt: "AWS Logo",
 //       footerLink: [
 //         {
@@ -253,7 +266,7 @@ const achievementSection = {
       title: "AWS Certification Journey",
       subtitle:
         "Currently advancing through the AWS certification path with hands-on experience in cloud infrastructure, automation, and security. Targeting AWS Certified DevOps Engineer by the end of 2025.",
-      image: require("./assets/images/AWS.png"),
+      image: img_10,
       imageAlt: "AWS Logo",
       footerLink: [
         {
@@ -266,7 +279,7 @@ const achievementSection = {
       title: "Real Time College – DevOps Engineering Program",
       subtitle:
         "Completed an intensive DevOps program focused on AWS, Kubernetes, Terraform, Jenkins, and Prometheus/Grafana — applying real-world automation and CI/CD practices.",
-      image: require("./assets/images/real_time_logo.png"),
+      image: img_11,
       imageAlt: "Real Time College Logo",
       footerLink: [
         {
@@ -279,7 +292,7 @@ const achievementSection = {
       title: "Netcraft Academy – Full-Stack Developer Certification",
       subtitle:
         "Earned certification in full-stack web development, mastering JavaScript, React, Node.js, and SQL through hands-on projects.",
-      image: require("./assets/images/netcraft_logo.jpeg"),
+      image: img_12,
       imageAlt: "Netcraft Academy Logo",
       footerLink: [
         {

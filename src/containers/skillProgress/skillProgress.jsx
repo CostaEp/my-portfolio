@@ -1,3 +1,4 @@
+import img_0 from "../../assets/images/skill.svg";
 import React from "react";
 import "./Progress.scss";
 import {illustration, techStack} from "../../portfolio";
@@ -33,7 +34,7 @@ export default function StackProgress() {
             ) : (
               <img
                 alt="Skills"
-                src={require("../../assets/images/skill.svg")}
+                src={img_0}
               />
             )}
           </div>

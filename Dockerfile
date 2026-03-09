@@ -1,29 +1,35 @@
-# This file is the main docker file configurations
+# Stage 1: Build the React application
+FROM node:20.0-alpine AS build
 
-# Official Node JS runtime as a parent image
-FROM node:20.0-alpine
-
-# Set the working directory to ./app
-WORKDIR /app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package.json ./
-
+# Install git
 RUN apk add --no-cache git
 
-# Install any needed packages
-RUN npm install
+WORKDIR /app
 
-# Audit fix npm packages
-RUN npm audit fix
+# Copy dependency files first to leverage Docker cache
+COPY package.json package-lock.json ./
 
-# Bundle app source
-COPY . /app
+# Install dependencies
+RUN npm install --legacy-peer-deps
 
-# Make port 3000 available to the world outside this container
-EXPOSE 3000
+# Copy all source files
+COPY . ./
 
-# Run app.js when the container launches
-CMD ["npm", "start"]
+# Build the project
+RUN npm run build
+
+# Stage 2: Serve the application with Nginx
+FROM nginx:alpine
+
+# Copy the build output to replace the default nginx contents.
+# We copy it to /my-portfolio because the Vite base URL is /my-portfolio/
+COPY --from=build /app/build /usr/share/nginx/html/my-portfolio
+
+# Copy custom nginx configuration to cleanly support SPA routing for subpath
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx and keep it running
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,3 +1,4 @@
+import img_0 from "../../assets/images/manOnTable.svg";
 import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
@@ -58,7 +59,7 @@ export default function Greeting() {
             ) : (
               <img
                 alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
+                src={img_0}
               ></img>
             )}
           </div>

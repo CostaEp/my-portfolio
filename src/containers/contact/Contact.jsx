@@ -1,3 +1,4 @@
+import img_0 from "../../assets/images/contactMailDark.svg";
 import React, {useContext} from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
@@ -58,7 +59,7 @@ export default function Contact() {
             ) : (
               <img
                 alt="Man working"
-                src={require("../../assets/images/contactMailDark.svg")}
+                src={img_0}
               ></img>
             )}
           </div>
