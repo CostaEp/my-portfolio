@@ -14,7 +14,7 @@
     "react-headroom": "^3.0.0",
     "react-reveal": "^1.2.2",
     "react-twitter-embed": "3.0.3",
-    "sass": "^1.32.8"
+    "sass": "^1.97.3"
   },
   "scripts": {
     "predeploy": "npm run build",
