@@ -1,0 +1,77 @@
+@import "../../_globalColor";
+
+.switch-lang {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-right: 15px;
+}
+
+/* Fix visible slider checkbox */
+.switch-lang input {
+  transform: scale(0.5);
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-lang {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $toggleSwitchSliderBG;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider-lang::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 28px;
+  left: 0;
+  bottom: 0;
+  background-color: $textColorDark;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch-lang input:checked + .slider-lang {
+  background-color: $toggleCheck;
+}
+
+.switch-lang input:focus + .slider-lang {
+  box-shadow: $toggleCheck;
+}
+
+.switch-lang input:checked + .slider-lang::before,
+.switch-lang input:checked + .slider-lang > .emoji-lang {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider-lang.round {
+  border-radius: 34px;
+}
+
+.slider-lang.round::before {
+  border-radius: 50%;
+}
+
+.emoji-lang {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}

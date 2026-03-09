@@ -8,10 +8,12 @@ import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
+
 import StyleContext from "../../contexts/StyleContext";
+import { usePortfolio } from "../../contexts/PortfolioContext";
 
 export default function Greeting() {
+  const { illustration, greeting } = usePortfolio();
   const {isDark} = useContext(StyleContext);
   if (!greeting.displayGreeting) {
     return null;

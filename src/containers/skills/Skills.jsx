@@ -2,13 +2,15 @@ import img_0 from "../../assets/images/developerActivity.svg";
 import React, {useContext} from "react";
 import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import {illustration, skillsSection} from "../../portfolio";
+
 import {Fade} from "react-reveal";
 import codingPerson from "../../assets/lottie/codingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
+import { usePortfolio } from "../../contexts/PortfolioContext";
 
 export default function Skills() {
+  const { illustration, skillsSection } = usePortfolio();
   const {isDark} = useContext(StyleContext);
   if (!skillsSection.display) {
     return null;

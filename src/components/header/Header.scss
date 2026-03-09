@@ -16,8 +16,10 @@
   color: $textColorDark !important;
 }
 
-.dark-menu li a:hover {
-  background-color: $buttonColor !important;
+.dark-menu li a:hover,
+.dark-menu .menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: $textColorDark !important;
 }
 
 .header {

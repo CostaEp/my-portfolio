@@ -1,8 +1,10 @@
 import React from "react";
 import "./SoftwareSkill.scss";
-import {skillsSection} from "../../portfolio";
+import { usePortfolio } from "../../contexts/PortfolioContext";
+
 
 export default function SoftwareSkill() {
+  const { skillsSection } = usePortfolio();
   return (
     <div>
       <div className="software-skills-main-div">

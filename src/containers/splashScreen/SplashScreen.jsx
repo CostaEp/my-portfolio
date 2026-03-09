@@ -1,10 +1,12 @@
 import React, {useContext} from "react";
 import "./SplashScreen.css";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
-import {greeting, splashScreen} from "../../portfolio";
+
 import StyleContext from "../../contexts/StyleContext";
+import { usePortfolio } from "../../contexts/PortfolioContext";
 
 export default function SplashScreen() {
+  const { greeting, splashScreen } = usePortfolio();
   const {isDark} = useContext(StyleContext);
   return (
     <div className={isDark ? "dark-mode splash-container" : "splash-container"}>

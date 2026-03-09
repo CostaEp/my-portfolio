@@ -1,10 +1,12 @@
 import React, {useState, useEffect, useContext, Suspense, lazy} from "react";
 import "./Project.scss";
 import Button from "../../components/button/Button";
-import {openSource, socialMediaLinks} from "../../portfolio";
+
 import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
+import { usePortfolio } from "../../contexts/PortfolioContext";
 export default function Projects() {
+  const { openSource, socialMediaLinks } = usePortfolio();
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
   );
@@ -33,8 +35,10 @@ export default function Projects() {
           setrepoFunction("Error");
         });
     };
-    getRepoData();
-  }, []);
+    if (openSource.display) {
+      getRepoData();
+    }
+  }, [openSource.display]);
 
   function setrepoFunction(array) {
     setrepo(array);

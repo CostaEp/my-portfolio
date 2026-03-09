@@ -2,14 +2,15 @@ import React, {Suspense, useContext} from "react";
 import "./twitter.scss";
 import Loading from "../loading/Loading";
 import {TwitterTimelineEmbed} from "react-twitter-embed";
-import {twitterDetails} from "../../portfolio";
+
 import StyleContext from "../../contexts/StyleContext";
+import { usePortfolio } from "../../contexts/PortfolioContext";
 
 const renderLoader = () => <Loading />;
 const cantDisplayError =
   "<div className='centerContent'><h2>Can't load? Check privacy protection settings</h2></div>";
 
-function timeOut() {
+function timeOut(twitterDetails) {
   setTimeout(function () {
     if (!document.getElementById("twitter").innerHTML.includes("iframe")) {
       document.getElementById("twitter").innerHTML = cantDisplayError;
@@ -20,6 +21,7 @@ var widthScreen = window.screen.width;
 
 export default function Twitter() {
   const {isDark} = useContext(StyleContext);
+  const { twitterDetails } = usePortfolio();
 
   if (!twitterDetails.display) {
     return null;
@@ -42,7 +44,7 @@ export default function Twitter() {
               key={isDark ? "1" : "2"}
               theme={isDark ? "dark" : "light"}
               noFooter={true}
-              onload={timeOut()}
+              onload={() => timeOut(twitterDetails)}
             />
           </div>
         </div>
