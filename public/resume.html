@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Costa Epshtein - DevOps Engineer Resume">
+    <title>Costa Epshtein - DevOps Engineer Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modern CSS Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #f1f5f9;
+            line-height: 1.4;
+            font-size: 12px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .container {
+            max-width: 920px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header section with sleek design */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 24px 35px;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0d9488 0%, #3b82f6 50%, #6366f1 100%);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-title h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+        .header-title h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(170px, 1fr));
+            gap: 8px 15px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 11.5px;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .contact-item:hover {
+            color: #38bdf8;
+            transform: translateX(2px);
+        }
+        .contact-item svg {
+            width: 13px;
+            height: 13px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+        
+        /* Two-column Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 270px 1fr;
+        }
+        
+        /* Left Sidebar styling */
+        .sidebar {
+            background-color: #f8fafc;
+            border-right: 1px solid #e2e8f0;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar-section h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        /* Skill tags custom grouping */
+        .skills-group {
+            margin-bottom: 10px;
+        }
+        .skills-group:last-child {
+            margin-bottom: 0;
+        }
+        .skills-group-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .skill-tag {
+            background-color: #e2e8f0;
+            color: #1e293b;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10.5px;
+            font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .skill-tag:hover {
+            background-color: #0f172a;
+            color: #ffffff;
+        }
+        
+        /* Education block styling */
+        .edu-item {
+            margin-bottom: 12px;
+        }
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+        .edu-title {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 11.5px;
+        }
+        .edu-meta {
+            font-size: 10.5px;
+            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 0;
+        }
+        .edu-desc {
+            font-size: 10.5px;
+            color: #475569;
+            font-style: italic;
+        }
+        
+        /* Languages styling */
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 11.5px;
+        }
+        .lang-name {
+            font-weight: 500;
+            color: #1e293b;
+        }
+        .lang-level {
+            color: #64748b;
+        }
+        
+        /* Right Main Content area */
+        .content {
+            padding: 24px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .content-section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #0f172a;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .content-section-title::before {
+            content: '';
+            width: 4px;
+            height: 14px;
+            background: linear-gradient(to bottom, #0d9488, #3b82f6);
+            border-radius: 2px;
+            display: inline-block;
+        }
+        .summary-text {
+            color: #334155;
+            font-size: 12px;
+            text-align: justify;
+            line-height: 1.45;
+        }
+        
+        /* Timeline and Experience */
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .exp-item {
+            position: relative;
+        }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+            gap: 5px;
+        }
+        .exp-role-company {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .exp-company {
+            color: #0d9488;
+            font-weight: 700;
+        }
+        .exp-date {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: #475569;
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        .exp-bullets {
+            list-style-type: none;
+            padding-left: 0px;
+        }
+        .exp-bullets li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 3.5px;
+            color: #334155;
+            font-size: 11.5px;
+            text-align: justify;
+            line-height: 1.35;
+        }
+        .exp-bullets li:last-child {
+            margin-bottom: 0;
+        }
+        .exp-bullets li::before {
+            content: "•";
+            color: #0d9488;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -12px;
+            position: absolute;
+        }
+        
+        /* Print Styles - optimized for single A4 page printout */
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+                font-size: 11.5px;
+            }
+            .container {
+                margin: 0;
+                box-shadow: none;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .main-layout {
+                grid-template-columns: 240px 1fr;
+            }
+            header {
+                padding: 18px 24px;
+                background: #0f172a !important;
+            }
+            .header-title h1 {
+                font-size: 22px;
+                color: #ffffff !important;
+            }
+            .header-title h2 {
+                font-size: 12.5px;
+                color: #38bdf8 !important;
+            }
+            .contact-item {
+                color: #cbd5e1 !important;
+                font-size: 11px;
+            }
+            .contact-item:hover {
+                transform: none;
+            }
+            .sidebar {
+                background-color: #f8fafc !important;
+                padding: 18px 14px;
+                gap: 16px;
+            }
+            .sidebar-section h3 {
+                margin-bottom: 8px;
+            }
+            .content {
+                padding: 18px 24px;
+                gap: 16px;
+            }
+            .content-section-title {
+                margin-bottom: 8px;
+            }
+            .skill-tag {
+                background-color: #f1f5f9 !important;
+                color: #1e293b !important;
+                border: 1px solid #cbd5e1;
+            }
+            .exp-date {
+                background-color: #f1f5f9 !important;
+                color: #475569 !important;
+            }
+            .exp-bullets li {
+                font-size: 11px;
+                margin-bottom: 2.5px;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="header-title">
+                    <h1 id="user-name">Costa Epshtein</h1>
+                    <h2 id="user-role">DevOps Engineer</h2>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+972525381655" class="contact-item" id="contact-phone">
+                        <svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                        <span>+972-52-5381655</span>
+                    </a>
+                    <a href="mailto:Costa84@gmail.com" class="contact-item" id="contact-email">
+                        <svg viewBox="0 0 24 24"><path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6A2,2 0 0,0 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
+                        <span>Costa84@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/costa-epshtein-33271131" target="_blank" class="contact-item" id="contact-linkedin">
+                        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <span>linkedin.com/in/costa-epshtein</span>
+                    </a>
+                    <a href="https://github.com/CostaEp" target="_blank" class="contact-item" id="contact-github">
+                        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>github.com/CostaEp</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content & Sidebar -->
+        <div class="main-layout">
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Technical Skills -->
+                <section class="sidebar-section" id="skills-section">
+                    <h3>Technical Skills</h3>
+                    
+                    <div class="skills-group">
+                        <div class="skills-group-title">DevOps & CI/CD</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">ArgoCD</span>
+                            <span class="skill-tag">JFrog Artifactory</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-group">
+                        <div class="skills-group-title">Containers & Orchestration</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Rancher</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-group">
+                        <div class="skills-group-title">Cloud & Infrastructure</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">AWS (EKS, Lambda)</span>
+                            <span class="skill-tag">Terraform</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-group">
+                        <div class="skills-group-title">OS & Scripting</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">RedHat Linux 9</span>
+                            <span class="skill-tag">Windows Server</span>
+                            <span class="skill-tag">Bash Scripting</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript / Node.js</span>
+                            <span class="skill-tag">.NET (C#)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-group">
+                        <div class="skills-group-title">Monitoring & Databases</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Grafana</span>
+                            <span class="skill-tag">Prometheus</span>
+                            <span class="skill-tag">MSSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Education -->
+                <section class="sidebar-section" id="education-section">
+                    <h3>Education</h3>
+                    
+                    <div class="edu-item">
+                        <div class="edu-title">Real Time College</div>
+                        <div class="edu-meta">
+                            <span>DevOps Program</span>
+                            <span>2022 – 2023</span>
+                        </div>
+                        <div class="edu-desc">AWS, Kubernetes, CI/CD, Terraform, Monitoring</div>
+                    </div>
+                    
+                    <div class="edu-item">
+                        <div class="edu-title">Netcraft Academy</div>
+                        <div class="edu-meta">
+                            <span>Fullstack Dev</span>
+                            <span>2019 – 2020</span>
+                        </div>
+                        <div class="edu-desc">JavaScript, React, Node.js, .NET</div>
+                    </div>
+                    
+                    <div class="edu-item">
+                        <div class="edu-title">Practical Electrical Engineer</div>
+                        <div class="edu-meta">
+                            <span>Diploma</span>
+                            <span>2002 – 2004</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Languages -->
+                <section class="sidebar-section" id="languages-section">
+                    <h3>Languages</h3>
+                    <div class="lang-item">
+                        <span class="lang-name">Hebrew</span>
+                        <span class="lang-level">Native</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">English</span>
+                        <span class="lang-level">Full Prof.</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Russian</span>
+                        <span class="lang-level">Native</span>
+                    </div>
+                </section>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <main class="content">
+                <!-- Career Summary -->
+                <section id="summary-section">
+                    <h2 class="content-section-title">Career Summary</h2>
+                    <p class="summary-text">
+                        Results-driven DevOps Engineer with comprehensive experience automating deployment pipelines, managing containerized infrastructure, and supporting cross-platform systems. Proficient in CI/CD platforms (Jenkins, Azure DevOps, GitHub Actions), scripting (Bash, Python), and orchestration (Rancher/Kubernetes, AWS EKS). Strong background in PMO and system integrations, with a track record of streamlining delivery cycles, ensuring infrastructure reliability, and adapting to strict operational guidelines.
+                    </p>
+                </section>
+                
+                <!-- Experience -->
+                <section id="experience-section">
+                    <h2 class="content-section-title">Professional Experience</h2>
+                    <div class="experience-timeline">
+                        
+                        <!-- Elbit Systems -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-role-company">
+                                    <span>DevOps Engineer</span> | <span class="exp-company">Elbit Systems</span>
+                                </div>
+                                <span class="exp-date">Dec 2025 – Present</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Accompanying complex projects from initial development through automated testing and deployment stages as part of the core DevOps team.</li>
+                                <li>Building and optimizing automated CI/CD deployment pipelines for various organizational services using Jenkins and Azure DevOps.</li>
+                                <li>Designing and implementing automated processes end-to-end, utilizing Bash and Python scripts to run continuous integration workflows.</li>
+                                <li>Orchestrating containerized applications using Rancher (Kubernetes) to manage workload scheduling, networking, and scaling.</li>
+                                <li>Configuring and maintaining secure, high-availability host infrastructure across RedHat Enterprise Linux 9 and Windows environments.</li>
+                                <li>Managing software binary storage and release artifacts using JFrog Artifactory, configuring caching policies and pipelines.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Firewave -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-role-company">
+                                    <span>DevOps Engineer</span> | <span class="exp-company">Firewave (Startup)</span>
+                                </div>
+                                <span class="exp-date">June 2024 – Dec 2025</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Automated AWS cloud infrastructure provisioning using Terraform, shortening resource provisioning duration by 40%.</li>
+                                <li>Implemented robust GitHub Actions workflows to streamline microservice updates, enhancing deployment consistency and reliability.</li>
+                                <li>Deployed and scaled microservice applications in Amazon EKS and integrated serverless compute layers using AWS Lambda.</li>
+                                <li>Established a comprehensive observability and monitoring stack utilizing Prometheus and Grafana for real-time alerting.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Matrix -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-role-company">
+                                    <span>PMO & Integration Specialist</span> | <span class="exp-company">Matrix, Herzliya</span>
+                                </div>
+                                <span class="exp-date">May 2022 – Dec 2025</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Managed full-lifecycle integration and deployments of WMS enterprise systems, ensuring alignment with customer operational goals.</li>
+                                <li>Coordinated onsite system rollouts, including configuration management, custom scripting, and comprehensive customer training.</li>
+                                <li>Automated recurring operations and database actions using MSSQL queries, stored procedures, and custom script integrations.</li>
+                                <li>Developed custom client integrations using JavaScript and .NET (C#) while managing backend services hosted on IIS.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- LogistiCare -->
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-role-company">
+                                    <span>Project Manager</span> | <span class="exp-company">LogistiCare, Lod</span>
+                                </div>
+                                <span class="exp-date">Jan 2020 – May 2022</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Directed delivery schedules, budgets, and milestones across multiple BI reporting and data visualization initiatives.</li>
+                                <li>Partnered with engineering and analytics teams to deploy frontend client dashboards, improving operations visibility.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Older Experience (Condensed for Single-Page Layout) -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 5px; border-top: 1px dashed #e2e8f0; padding-top: 10px;">
+                            <div>
+                                <div style="font-weight: 600; color: #0f172a; font-size: 11.5px;">
+                                    Military Officer <span style="font-weight: normal; color: #64748b;">| IDF</span>
+                                </div>
+                                <div style="font-size: 10.5px; color: #475569; margin-top: 2px;">
+                                    Arming Officer & Safety Director (2004 – 2014)
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; color: #0f172a; font-size: 11.5px;">
+                                    Restaurant Manager <span style="font-weight: normal; color: #64748b;">| Trio Restaurant</span>
+                                </div>
+                                <div style="font-size: 10.5px; color: #475569; margin-top: 2px;">
+                                    Operations & Staff Coordination (2016 – 2019)
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+            </main>
+            
+        </div>
+    </div>
+</body>
+</html>
